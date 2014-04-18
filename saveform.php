@@ -27,10 +27,12 @@
 
     //if (!$mongo_url = getenv('MONGOHQ_URL')) {
     if (!$mongo_url = getenv('MONGOLAB_URL')) {
+      echo "here we are!";
       $mongo_url = 'localhost';
       $mongo = new MongoClient($mongo_url);
     }
     else {
+      echo "Mongo lab! detected";
       $username = 'yaroslav';
       $password = 'admin3465';
       //$mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
@@ -65,7 +67,7 @@
   } catch (MongoException $e) {
     die('Error: ' . $e->getMessage());
   };
-  //phpinfo();
+  phpinfo();
 ?>
 
 </div>
