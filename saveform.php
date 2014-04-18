@@ -57,7 +57,7 @@
     echo "<p>db selected</p>";
 
     // Выбираем коллекцию
-    $collection = $db->fields;
+    $collection = 'fields';
 
     echo "<p>Get collection</p>";
 
