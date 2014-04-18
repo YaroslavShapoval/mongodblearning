@@ -36,9 +36,9 @@
     }
     else {
       echo "Mongo lab! detected";
-      $username = 'yaroslav';
-      $password = 'admin3465';
-      $mongo_url = "mongodb://$username:$password@ds039437.mongolab.com:39437/heroku_app24267309";
+      //$username = 'yaroslav';
+      //$password = 'admin3465';
+      //$mongo_url = "mongodb://$username:$password@ds039437.mongolab.com:39437/heroku_app24267309";
       $mongo = new Mongo($mongo_url);
 //      $mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
 //      if (!$mongo = new MongoClient($mongo_url)) {
