@@ -19,8 +19,6 @@
     echo '<p>' . $field_name_element . ': ' . $field_value_element . '</p>';
   }
 
-  phpinfo();
-
   try {
     // Подкюлаемся к серверу MongoDB
     echo "<p>i'm inside try/catch</p>";
@@ -39,7 +37,7 @@
       $username = 'yaroslav';
       $password = 'admin3465';
       //$mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033/app24267309";
-      $mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033";
+      //$mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033";
       //$mongo_url_new = "mongodb://$username:$password" . substr($mongo_url, strpos('@'));
       echo '<p>mongo_url = ' . $mongo_url . '</p>';
       $mongo = new MongoClient($mongo_url);
