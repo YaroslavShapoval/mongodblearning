@@ -1,0 +1,58 @@
+@import url(http://fonts.googleapis.com/css?family=Exo);
+
+.wrapper {
+    font-size: 15px;
+    width: 700px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.fieldrow {
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.field {
+    display: inline-block;
+    text-align: center;
+    padding: 5px 10px;
+    width: 150px;
+    height: 30px;
+    /* background: red; */
+}
+.field>input[type="text"] {
+    width: 150px;
+    padding: 5px 2px;
+    margin-right: 20px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    font-family: 'Exo', sans-serif;
+    font-size: 0.9em;
+}
+.button {
+    border: 1px solid #b8b8b8;
+    margin: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: #fafafa;
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+
+.add.button {
+    /*display: none;*/
+}
+
+.submit-buttons {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.submit {
+    width: 150px;
+}

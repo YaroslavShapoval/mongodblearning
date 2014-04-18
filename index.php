@@ -1,16 +1,32 @@
 <!doctype html>
-<html lang="ru">
+<html lang='ru'>
 <head>
-  <meta charset="UTF-8">
+  <meta charset='UTF-8'>
   <title>MongoDB Learning</title>
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+  <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
+
+<div class='wrapper'>
+
+<form action='' method='post'>
+  <div class='fields' id='dinamicForm'>
+    <!-- Here will be field rows -->
+  </div>
+
+  <div class='submit-buttons'>
+    <input type='submit' class='submit button' value='Отправить' />
+  </div>
+</form>
+
+</div>
 
   <?php echo '<p>Hello, world!</p>'; ?>
 
   <?php
     //echo phpinfo();
-  try {
+/*  try {
    // open connection to MongoDB server
    $conn = new Mongo('localhost');
 
@@ -40,11 +56,11 @@
    die('Error connecting to MongoDB server');
   } catch (MongoException $e) {
    die('Error: ' . $e->getMessage());
-  }
+  }*/
   ?>
 
   <?php echo '<p>Bye-bye!</p>'; ?>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src='js/fields.js'></script>
 </body>
 </html>
