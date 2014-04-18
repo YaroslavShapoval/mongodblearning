@@ -26,6 +26,7 @@
     //$mongohq = getenv('MONGOHQ_URL');
 
     //if (!$mongo_url = getenv('MONGOHQ_URL')) {
+/*
     if (!$mongo_url = getenv('MONGOLAB_URL')) {
       echo "here we are!";
       $mongo_url = 'localhost';
@@ -40,6 +41,7 @@
     }
 
     echo "<p>connection established</p>";
+*/
 /*
     // Выбираем БД
     $dbname = 'dinamicForm';
