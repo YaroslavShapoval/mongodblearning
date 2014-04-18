@@ -19,11 +19,12 @@
     echo '<p>' . $field_name_element . ': ' . $field_value_element . '</p>';
   }
 
-  try {
+/*  try {
     // Подкюлаемся к серверу MongoDB
     echo "<p>i'm inside try/catch</p>";
     //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
     if (!$mongo_url = getenv('MONGOHQ_URL')) {
+      echo 'here we are!';
       $mongo_url = 'localhost';
     }
     //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
@@ -56,7 +57,8 @@
     die('Error connecting to MongoDB server');
   } catch (MongoException $e) {
     die('Error: ' . $e->getMessage());
-  }
+  };*/
+  phpinfo();
 ?>
 
 </div>
