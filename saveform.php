@@ -22,51 +22,32 @@
   try {
     // Подкюлаемся к серверу MongoDB
     echo "<p>i'm inside try/catch</p>";
-    //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
-    //$mongohq = getenv('MONGOHQ_URL');
-
-    //if (!$mongo_url = getenv('MONGOHQ_URL')) {
 
     if (!$mongo_url = getenv('MONGOHQ_URL')) {
-      echo "here we are!";
       $mongo_url = 'localhost';
-      $mongo = new MongoClient($mongo_url);
+      $dbname = 'dinamicForm';
     }
     else {
-      echo "Mongo lab! detected";
-      $username = 'yaroslav';
-      $password = 'admin3465';
       //$mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033/app24267309";
       //$mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033";
       //$mongo_url_new = "mongodb://$username:$password" . substr($mongo_url, strpos('@'));
-      echo '<p>mongo_url = ' . $mongo_url . '</p>';
-      $mongo = new MongoClient($mongo_url);
-//      $mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
-//      if (!$mongo = new MongoClient($mongo_url)) {
-//        echo 'cannot connect mondodb';
-//      }
+      //$dbname = str_replace("/", "", $mongo_url["path"]);
+      $dbname = substr($mongo_url, strripos($mongo_url, '/')+1);
+      echo '<p>DB name: ' . $dbname . '</p>' ;
     }
 
-    echo "<p>connection established</p>";
+    $mongo = new MongoClient($mongo_url);
 
     // Выбираем БД
-    //$dbname = 'dinamicForm';
-    //$dbname = str_replace("/", "", $mongo_url["path"]);
-    $dbname = 'app24267309';
     $db = $mongo->$dbname;
-    echo "<p>db selected</p>";
 
     // Выбираем коллекцию
     $collection = $db->fields;
 
-    echo "<p>Get collection</p>";
-
     // Подготавливаем документ, соединяя поля
-    echo "<p>Подготавливаем документ, соединяя поля</p>";
     $item = array();
     foreach ($field_name as $key => $field_name_element) {
       $field_value_element = $field_value[$key];
-      echo "<p>field_name_element = $field_name_element, field_value_element = $field_value_element</p>";
       $item["$field_name_element"] = "$field_value_element";
     }
 

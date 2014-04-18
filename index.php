@@ -9,7 +9,9 @@
 <body>
 
 <?php
-  print_r(get_loaded_extensions());
+  $string = "mongodb://username:password@lennon.mongohq.com:10033/app24267309";
+  echo strripos($string, '/');
+  echo '<p> DB name: \''.substr($string, strripos($string, '/')+1).'\'</p>';
 ?>
 
   <div class='wrapper'>
