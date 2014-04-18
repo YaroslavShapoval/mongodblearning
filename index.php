@@ -6,6 +6,7 @@
   <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
   <link rel='stylesheet' href='css/style.css'>
 </head>
+
 <body>
 
   <div class='wrapper'>
@@ -21,5 +22,6 @@
   </div>
 
   <script src='js/fields.js'></script>
+
 </body>
 </html>
