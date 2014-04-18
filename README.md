@@ -1,12 +1,13 @@
-mongodblearning
+learning MongoDB
 ===============
+http://mongolearning.herokuapp.com/
 
-Study document-oriented database MongoDB and its interaction with PHP on the example of a small application.
+Studing document-oriented database MongoDB and its interaction with PHP on the example of a small application.
 
 
 
 Изучение MongoDB
-====
+================
 
 Учебный проект на взаимодействие jQuery, MongoDB и PHP.
 
