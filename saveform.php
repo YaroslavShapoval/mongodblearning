@@ -51,8 +51,9 @@
     echo "<p>connection established</p>";
 
     // Выбираем БД
-    $dbname = 'dinamicForm';
-    $db = $mongo->selectDB($dbname);
+    //$dbname = 'dinamicForm';
+    //$dbname = 'app24267309';
+    //$db = $mongo->selectDB($dbname);
     echo "<p>db selected</p>";
 
     // Выбираем коллекцию
