@@ -38,7 +38,7 @@
       echo "Mongo lab! detected";
       $username = 'yaroslav';
       $password = 'admin3465';
-      $mongo_url = "mongodb://$username:$password@ds039437.mongolab.com:39437/heroku_app24267309";
+      //$mongo_url = "mongodb://$username:$password@ds039437.mongolab.com:39437/heroku_app24267309";
       $mongo_url_new = "mongodb://$username:$password" . substr($mongo_url, strpos('@'));
       echo '<p>mongo_url_new = ' . $mongo_url_new . '</p>';
       $mongo = new MongoClient($mongo_url_new);
