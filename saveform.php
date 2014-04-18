@@ -22,12 +22,15 @@
   try {
     // Подкюлаемся к серверу MongoDB
     //$hostname = 'localhost';
+    echo "<p>i'm inside try/catch</p>";
     $hostname = getenv("MONGOHQ_URL");
     $mongo = new Mongo($hostname);
+    echo "<p>connection established</p>";
 
     // Выбираем БД
     $dbname = 'dinamicForm';
     $db = $mongo->selectDB($dbname);
+    echo "<p>db selected</p>";
 
     // Выбираем коллекцию
     $collection = $db->fields;
