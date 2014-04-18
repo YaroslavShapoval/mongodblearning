@@ -23,13 +23,13 @@
     // Подкюлаемся к серверу MongoDB
     echo "<p>i'm inside try/catch</p>";
     //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
-    if (!$mongo_url = getenv('MONGOHQ_URL'); {
+    if (!$mongo_url = getenv('MONGOHQ_URL') {
       $mongo_url = 'localhost';
     }
     //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
     $mongo = new Mongo($mongo_url);
 
-    echo "<p>connection established</p>";
+/*    echo "<p>connection established</p>";
 
     // Выбираем БД
     $dbname = 'dinamicForm';
@@ -49,7 +49,7 @@
     // Добавляем новый документ
     $collection->insert($item);
     echo 'Inserted document with ID: ' . $item['_id'];
-
+*/
     // Отключаемся от сервера
     $mongo->close();
   } catch (MongoConnectionException $e) {
