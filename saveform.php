@@ -23,8 +23,12 @@
     // Подкюлаемся к серверу MongoDB
     //$hostname = 'localhost';
     echo "<p>i'm inside try/catch</p>";
-    $hostname = getenv("MONGOHQ_URL");
-    $mongo = new Mongo($hostname);
+    try {
+      $hostname = getenv("MONGOHQ_URL");
+      $mongo = new Mongo($hostname);
+    } catch {
+      echo 'cannot establish connection';
+    }
     echo "<p>connection established</p>";
 
     // Выбираем БД
