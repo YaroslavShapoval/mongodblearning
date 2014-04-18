@@ -59,6 +59,8 @@
     // Выбираем коллекцию
     $collection = $db->fields;
 
+    echo "Get collection";
+
     // Подготавливаем документ, соединяя поля
     $item = array();
     foreach ($field_name as $key => $field_name_element) {
