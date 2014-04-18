@@ -32,7 +32,7 @@
       echo "<p>i'm on heroku! my url is: $mongo_url</p>";
     }
     //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
-    $mongo = new Mongo($mongo_url);
+    $mongo = (new MongoClient($mongo_url) ?:die('cannot create mongo connection'));
 
     echo "<p>connection established</p>";
 /*
