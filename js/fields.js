@@ -7,10 +7,10 @@ $(document).ready(function() {
   var $node = " \
     <div class='fieldrow'> \
       <div class='field'> \
-        <input type='text' class='fieldname' name='fieldname' placeholder='Field name' /> \
+        <input type='text' class='fieldname' name='fieldname[]' placeholder='Field name' /> \
       </div> \
       <div class='field'> \
-        <input type='text' class='fieldvalue' name='fieldvalue' placeholder='Field value' /> \
+        <input type='text' class='fieldvalue' name='fieldvalue[]' placeholder='Field value' /> \
       </div> \
       <div class='field'> \
         <button type='button' class='add button'>+</button> \
