@@ -10,7 +10,7 @@
 <div class='wrapper'>
 <a href="./">Back home</a>
 <?php
-  echo '<p>Hello!</p>';
+  echo '<p>Привет! Список добавляемых данных таков:</p>';
   $field_name = $_POST['fieldname'];
   $field_value = $_POST['fieldvalue'];
 
@@ -20,22 +20,22 @@
   }
 
   try {
-    // Подкюлаемся к серверу MongoDB
-    echo "<p>i'm inside try/catch</p>";
 
+    // Если доступна переменная 'MONGOHQ_URL', то мы на heroku
+    // Иначе мы на локальной машине
     if (!$mongo_url = getenv('MONGOHQ_URL')) {
       $mongo_url = 'localhost';
       $dbname = 'dinamicForm';
     }
     else {
-      //$mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033/app24267309";
-      //$mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033";
-      //$mongo_url_new = "mongodb://$username:$password" . substr($mongo_url, strpos('@'));
-      //$dbname = str_replace("/", "", $mongo_url["path"]);
+      // Вычленяем имя базы данных из адреса сервера mongodb, полученного в переменной MONGOHQ_URL
+      // MONGOHQ_URL возвращает строку вида: 'mongodb://username:password@lennon.mongohq.com:10033/app24267309'
+      // в которой 'app24267309' является именем базы данных.
+      // Найдём последний символ '/', а всё, что после него - искомое имя
       $dbname = substr($mongo_url, strripos($mongo_url, '/')+1);
-      echo '<p>DB name: ' . $dbname . '</p>' ;
     }
 
+    // Подкюлаемся к серверу MongoDB
     $mongo = new MongoClient($mongo_url);
 
     // Выбираем БД
@@ -53,7 +53,7 @@
 
     // Добавляем новый документ
     $collection->insert($item);
-    echo 'Inserted document with ID: ' . $item['_id'];
+    echo 'ID добавленного документа: ' . $item['_id'];
 
     // Отключаемся от сервера
     $mongo->close();

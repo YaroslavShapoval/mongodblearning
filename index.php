@@ -8,12 +8,6 @@
 </head>
 <body>
 
-<?php
-  $string = "mongodb://username:password@lennon.mongohq.com:10033/app24267309";
-  echo strripos($string, '/');
-  echo '<p> DB name: \''.substr($string, strripos($string, '/')+1).'\'</p>';
-?>
-
   <div class='wrapper'>
     <form action='saveform.php' method='post'>
       <div class='fields' id='dinamicForm'>
