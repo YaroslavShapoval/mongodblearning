@@ -66,6 +66,7 @@
     $item = array();
     foreach ($field_name as $key => $field_name_element) {
       $field_value_element = $field_value[$key];
+      echo "<p>field_name_element = $field_name_element, field_value_element = $field_value_element</p>";
       $item["$field_name_element"] = "$field_value_element";
     }
 
