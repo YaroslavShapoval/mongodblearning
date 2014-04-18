@@ -53,8 +53,8 @@
 
     // Выбираем БД
     //$dbname = 'dinamicForm';
-    $dbname = 'app24267309';
-    $db = $mongo->selectDB($dbname);
+    $dbname = str_replace("/", "", $mongo_url["path"]);
+    $db = $mongo->$dbname;
     echo "<p>db selected</p>";
 
     // Выбираем коллекцию
