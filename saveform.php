@@ -21,12 +21,13 @@
 
   try {
     // Подкюлаемся к серверу MongoDB
-    //$hostname = 'localhost';
     echo "<p>i'm inside try/catch</p>";
     //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
-    $hostname = getenv('MONGOHQ_URL');
-    //$hostname = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
-    //$mongo = new Mongo($hostname);
+    if (!$mongo_url = getenv('MONGOHQ_URL'); {
+      $mongo_url = 'localhost';
+    }
+    //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
+    $mongo = new Mongo($mongo_url);
 
     echo "<p>connection established</p>";
 
