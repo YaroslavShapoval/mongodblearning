@@ -38,7 +38,8 @@
       echo "Mongo lab! detected";
       $username = 'yaroslav';
       $password = 'admin3465';
-      $mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033/app24267309";
+      //$mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033/app24267309";
+      $mongo_url = "mongodb://$username:$password@lennon.mongohq.com:10033";
       //$mongo_url_new = "mongodb://$username:$password" . substr($mongo_url, strpos('@'));
       echo '<p>mongo_url = ' . $mongo_url . '</p>';
       $mongo = new MongoClient($mongo_url);
@@ -52,12 +53,12 @@
 
     // Выбираем БД
     //$dbname = 'dinamicForm';
-    //$dbname = 'app24267309';
-    //$db = $mongo->selectDB($dbname);
+    $dbname = 'app24267309';
+    $db = $mongo->selectDB($dbname);
     echo "<p>db selected</p>";
 
     // Выбираем коллекцию
-    $collection = 'fields';
+    $collection = $db->fields;
 
     echo "<p>Get collection</p>";
 
