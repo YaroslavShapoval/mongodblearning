@@ -29,7 +29,7 @@
 
     //if (!$mongo_url = getenv('MONGOHQ_URL')) {
 
-    if (!$mongo_url = getenv('MONGOLAB_URI')) {
+    if (!$mongo_url = getenv('MONGOHQ_URL')) {
       echo "here we are!";
       $mongo_url = 'localhost';
       $mongo = new MongoClient($mongo_url);
@@ -39,7 +39,7 @@
       //$username = 'yaroslav';
       //$password = 'admin3465';
       //$mongo_url = "mongodb://$username:$password@ds039437.mongolab.com:39437/heroku_app24267309";
-      $mongo = new Mongo($mongo_url);
+      $mongo = new MongoClient($mongo_url);
 //      $mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
 //      if (!$mongo = new MongoClient($mongo_url)) {
 //        echo 'cannot connect mondodb';
