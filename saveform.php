@@ -34,7 +34,7 @@
     //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
     $username = 'yaroslav';
     $password = 'admin3465';
-    $mongo = new MongoClient($mongo_url, array("username" => $username, "password" => $password));
+    $mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
 
     echo "<p>connection established</p>";
 /*
