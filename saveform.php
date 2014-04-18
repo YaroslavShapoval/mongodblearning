@@ -20,7 +20,6 @@
   }
 
   try {
-
     // Если доступна переменная 'MONGOHQ_URL', то мы на heroku
     // Иначе мы на локальной машине
     if (!$mongo_url = getenv('MONGOHQ_URL')) {
