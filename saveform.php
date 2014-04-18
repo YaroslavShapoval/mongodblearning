@@ -19,7 +19,9 @@
     echo '<p>' . $field_name_element . ': ' . $field_value_element . '</p>';
   }
 
-/*  try {
+  phpinfo();
+
+  try {
     // Подкюлаемся к серверу MongoDB
     echo "<p>i'm inside try/catch</p>";
     //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
@@ -36,10 +38,11 @@
       echo "Mongo lab! detected";
       $username = 'yaroslav';
       $password = 'admin3465';
-      //$mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
-      if (!$mongo = new MongoClient($mongo_url)) {
-        echo 'cannot connect mondodb';
-      }
+      $mongo_url = "mongodb://$username:$password@ds039437.mongolab.com:39437/heroku_app24267309";
+//      $mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
+//      if (!$mongo = new MongoClient($mongo_url)) {
+//        echo 'cannot connect mondodb';
+//      }
     }
 
     echo "<p>connection established</p>";
@@ -70,8 +73,6 @@
   } catch (MongoException $e) {
     die('Error: ' . $e->getMessage());
   };
-*/
-  phpinfo();
 ?>
 
 </div>
