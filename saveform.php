@@ -63,12 +63,12 @@
     echo 'Inserted document with ID: ' . $item['_id'];
 */
     // Отключаемся от сервера
-    $mongo->close();
+/*    $mongo->close();
   } catch (MongoConnectionException $e) {
     die('Error connecting to MongoDB server');
   } catch (MongoException $e) {
     die('Error: ' . $e->getMessage());
-  };
+  };*/
   phpinfo();
 ?>
 
