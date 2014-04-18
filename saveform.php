@@ -23,19 +23,19 @@
     // Подкюлаемся к серверу MongoDB
     echo "<p>i'm inside try/catch</p>";
     //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
-    //$mongohq =  getenv('MONGOHQ_URL');
+    //$mongohq = getenv('MONGOHQ_URL');
 
     if (!$mongo_url = getenv('MONGOHQ_URL')) {
       $mongo_url = 'localhost';
     }
     else {
-      echo "i'm on heroku!";
+      echo "<p>i'm on heroku! my url is: $mongo_url</p>";
     }
-/*    //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
+    //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
     $mongo = new Mongo($mongo_url);
 
     echo "<p>connection established</p>";
-
+/*
     // Выбираем БД
     $dbname = 'dinamicForm';
     $db = $mongo->selectDB($dbname);
