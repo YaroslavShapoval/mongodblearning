@@ -19,7 +19,7 @@
     echo '<p>' . $field_name_element . ': ' . $field_value_element . '</p>';
   }
 
-  //try {
+  try {
     // Подкюлаемся к серверу MongoDB
     echo "<p>i'm inside try/catch</p>";
     //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
@@ -27,14 +27,14 @@
 
     if (!$mongo_url = getenv('MONGOHQ_URL')) {
       $mongo_url = 'localhost';
+      $mongo = new MongoClient($mongo_url);
     }
     else {
-      echo "<p>i'm on heroku! my url is: $mongo_url</p>";
+      $username = 'yaroslav';
+      $password = 'admin3465';
+      //$mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
+      $mongo = new MongoClient("$mongo_url");
     }
-    //$mongo_url = getenv('MONGOHQ_URL') ?: die('Missing MONGOHQ_URL environment variable');
-    $username = 'yaroslav';
-    $password = 'admin3465';
-    $mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
 
     echo "<p>connection established</p>";
 /*
@@ -56,14 +56,14 @@
     // Добавляем новый документ
     $collection->insert($item);
     echo 'Inserted document with ID: ' . $item['_id'];
-
+*/
     // Отключаемся от сервера
     $mongo->close();
   } catch (MongoConnectionException $e) {
     die('Error connecting to MongoDB server');
   } catch (MongoException $e) {
     die('Error: ' . $e->getMessage());
-  };*/
+  };
   //phpinfo();
 ?>
 
