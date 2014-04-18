@@ -33,7 +33,7 @@
       $username = 'yaroslav';
       $password = 'admin3465';
       //$mongo = (new MongoClient($mongo_url, array("username" => $username, "password" => $password))? : die('cannot connect mongo'));
-      $mongo = new MongoClient($mongo_url);
+      $mongo = new Mongo($mongo_url);
     }
 
     echo "<p>connection established</p>";
