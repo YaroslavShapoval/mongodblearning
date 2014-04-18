@@ -9,8 +9,6 @@
 
 <body>
 
-  <a href="https://github.com/YaroslavShapoval/mongodblearning">Репозиторий на Github</a>
-
   <div class='wrapper'>
     <form action='saveform.php' method='post'>
       <div class='fields' id='dinamicForm'>
@@ -21,6 +19,7 @@
         <input type='submit' class='submit button' value='Отправить' />
       </div>
     </form>
+    <a href="https://github.com/YaroslavShapoval/mongodblearning">Репозиторий на Github</a>
   </div>
 
   <script src='js/fields.js'></script>
