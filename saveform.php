@@ -29,6 +29,7 @@
     } catch {
       echo 'cannot establish connection';
     }
+
     echo "<p>connection established</p>";
 
     // Выбираем БД
