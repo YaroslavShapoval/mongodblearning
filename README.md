@@ -16,18 +16,6 @@ Studing document-oriented database MongoDB and its interaction with PHP on the e
 - возможность удалять/добавлять строки (в конце каждой строки символ '-', в конце последней строки - символ '+')
 
 
-## jQuery
-
-
-
-## MongoDB
-
-
-
-## PHP
-
-
-
 ## Учебные материалы
 
 - http://jsman.ru/mongo-book/index.html
