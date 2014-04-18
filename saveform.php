@@ -23,9 +23,9 @@
     // Подкюлаемся к серверу MongoDB
     //$hostname = 'localhost';
     echo "<p>i'm inside try/catch</p>";
-    $MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
-    $hostname = getenv("$MONGOHQ_URL");
-    $mongo = new Mongo($hostname);
+    //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
+    $hostname = getenv("MONGOHQ_URL");
+    $mongo = new MongoClient($hostname);
 
     echo "<p>connection established</p>";
 
