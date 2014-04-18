@@ -25,7 +25,8 @@
     //$MONGOHQ_URL = "mongodb://heroku:m5Hr0c7KdcvAkDjkRv_MqbTKKXe2IfH966RR8EJ9nMWhalKHoSKwcnHuIJ3tdZ3xEkhQwT-2DExMPdTTyaJZQQ@lennon.mongohq.com:10026/app24267309";
     //$mongohq = getenv('MONGOHQ_URL');
 
-    if (!$mongo_url = getenv('MONGOHQ_URL')) {
+    //if (!$mongo_url = getenv('MONGOHQ_URL')) {
+    if (!$mongo_url = getenv('MONGOLAB_URL')) {
       $mongo_url = 'localhost';
       $mongo = new MongoClient($mongo_url);
     }
