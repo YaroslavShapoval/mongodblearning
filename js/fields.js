@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   // Инициализация полей
   for(var i = 0; i < startingCount; i++) {
-    root.after($node);
+    root.append($node);
     currentCount++;
   }
   displayButtons();

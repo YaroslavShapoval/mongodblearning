@@ -15,9 +15,7 @@
         <!-- Here will be field rows -->
       </div>
 
-      <div class='submit-buttons'>
-        <input type='submit' class='submit button' value='Отправить' />
-      </div>
+      <input type='submit' class='submit button' value='Отправить' />
     </form>
     <a href="https://github.com/YaroslavShapoval/mongodblearning">Репозиторий на Github</a>
   </div>

@@ -8,9 +8,10 @@
 </head>
 <body>
 <div class='wrapper'>
-<a href="./">Back home</a>
+<a href="./">Вернуться к форме</a>
 <?php
   echo '<p>Привет! Список добавляемых данных таков:</p>';
+  echo "<div class='field-output'";
   $field_name = $_POST['fieldname'];
   $field_value = $_POST['fieldvalue'];
 
@@ -18,6 +19,7 @@
     $field_value_element = $field_value[$key];
     echo '<p>' . $field_name_element . ': ' . $field_value_element . '</p>';
   }
+  echo "</div>";
 
   try {
     // Если доступна переменная 'MONGOHQ_URL', то мы на heroku
